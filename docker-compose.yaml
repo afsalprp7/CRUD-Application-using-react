@@ -4,11 +4,13 @@ services:
   client:
     build:
       context: ./client
+    image: muhammed7afsal/crud-application-client:latest
     ports:
       - "3000:3000"
 
   server:
     build:
       context: ./server
+    image: muhammed7afsal/crud-application-server:latest
     ports:
-        - "4000:4000"
+      - "4000:4000"
