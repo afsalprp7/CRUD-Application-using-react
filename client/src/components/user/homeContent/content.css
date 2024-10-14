@@ -1,0 +1,8 @@
+.main-container{
+    width: 100%;
+    background-image: url('https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148417584.jpg');
+    background-size: cover;
+    height: 100vh;
+    padding-top: 100px;
+    color: black;
+}

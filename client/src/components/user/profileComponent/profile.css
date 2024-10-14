@@ -1,0 +1,49 @@
+.main-container{
+    width: 100%;
+    background-image: url('https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148417584.jpg');
+    background-size: cover;
+    height: 100vh;
+    padding-top: 100px;
+    color: black;
+}
+
+.profile-pic{
+    position: relative;
+    
+}
+.profile-pic img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.upload{
+    position: absolute;
+    bottom: 1px;
+    margin-left: 70px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.custom-file-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    color: hsl(0, 0%, 0%);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 14px;
+  }
+
+.custom-file-label i {
+    font-size: 18px;
+    border-radius: 50px;
+  }
+  .content-container{
+    color: white;
+    background-image: linear-gradient(180deg,transparent,rgba(0, 0, 0, 0.61),#111); 
+  }
+
+  .profileImage{
+    max-height: 90px;
+    max-width: 90px;
+  }
