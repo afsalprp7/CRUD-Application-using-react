@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_HUB_PAT }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
+      - name: Build Docker images
+        run: docker-compose build
+
+      - name: Tag Docker images
+        run: |
+          docker tag muhammed7afsal/crud-application-client:latest muhammed7afsal/crud-application-client:${{ github.sha }}
+          docker tag muhammed7afsal/crud-application-server:latest muhammed7afsal/crud-application-server:${{ github.sha }}
+
+      - name: Push Docker images
+        run: |
+          docker push muhammed7afsal/crud-application-client:latest
+          docker push muhammed7afsal/crud-application-client:${{ github.sha }}
+          docker push muhammed7afsal/crud-application-server:latest
+          docker push muhammed7afsal/crud-application-server:${{ github.sha }}
